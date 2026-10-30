@@ -9,7 +9,7 @@ public class PlayerAnimation : MonoBehaviour
     PlayerMovement _movement;
 
     static readonly int SpeedHash = Animator.StringToHash("Speed");
-    static readonly int IsGroundedHash = Animator.StringToHash("isGrounded");
+    static readonly int IsGroundedHash = Animator.StringToHash("IsGround");
     static readonly int YVelocityHash = Animator.StringToHash("yVelocity");
     static readonly int AttackHash = Animator.StringToHash("Attack");
 

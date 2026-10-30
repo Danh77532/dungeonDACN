@@ -4,6 +4,7 @@ using UnityEngine;
 public class Health : MonoBehaviour, IDamageable
 {
     [SerializeField] int maxHealth = 100;
+    [SerializeField] PlayerStats playerStats; public PlayerStats BaseStats => playerStats;
     [SerializeField] float invincibleTime = 0f; // 0 = không có i-frame
 
     float _invincibleUntil;
@@ -16,8 +17,12 @@ public class Health : MonoBehaviour, IDamageable
     public event Action<DamageInfo> Damaged;
     public event Action Died;
 
-    void Awake() => Current = maxHealth;
+    void Awake() { if (playerStats != null) maxHealth = Mathf.Max(1, playerStats.maxHealth); Current = maxHealth; }
 
+#if UNITY_EDITOR
+    [ContextMenu("Test lethal damage")]
+    void TestLethalDamage() { if (Application.isPlaying) TakeDamage(new DamageInfo { Amount = Current }); }
+#endif
     public void TakeDamage(DamageInfo info)
     {
         if (Current <= 0) return;

@@ -1112,6 +1112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 100
+  playerStats: {fileID: 0}
   invincibleTime: 0
 --- !u!1 &1004832936
 GameObject:
@@ -1756,6 +1757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 100
+  playerStats: {fileID: 0}
   invincibleTime: 0
 --- !u!114 &1154715388
 MonoBehaviour:
@@ -2533,6 +2535,68 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 18.180796, y: 0.55400085}
   m_EdgeRadius: 0
+--- !u!1 &1923099090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1923099092}
+  - component: {fileID: 1923099091}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1923099091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923099090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea30a54b1d15a9848a0906b75c40e099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  sfxGroup: {fileID: 3032231659414487035, guid: 32593eb0437db8f48a691f1dd9b34c8a, type: 2}
+  ambienceGroup: {fileID: 464564508057799425, guid: 32593eb0437db8f48a691f1dd9b34c8a, type: 2}
+  clips:
+  - {fileID: 8300000, guid: aced877960082864eabb8350c4259205, type: 3}
+  - {fileID: 8300000, guid: cdc87fea734754640aebd89e29fa11b4, type: 3}
+  - {fileID: 8300000, guid: dbebfeada7bc86c42a0cf8a605aebca0, type: 3}
+  - {fileID: 8300000, guid: a14232f80f1ffb74a96b77712fcf2a85, type: 3}
+  - {fileID: 8300000, guid: fc700090f6c256d47aa11c34535dee68, type: 3}
+  - {fileID: 8300000, guid: 9396ca3a9a1c3864b8a11e1c1bafec20, type: 3}
+  - {fileID: 8300000, guid: 76f331496571cce4fb32542d22ea5cb0, type: 3}
+  - {fileID: 8300000, guid: b8297489bacffdc408567aff199776ef, type: 3}
+  - {fileID: 8300000, guid: 36cbb21ccbee8fc439128e5c6108fd4c, type: 3}
+  - {fileID: 8300000, guid: f9c3b3ae99a5b3e4b8a9b113dd477828, type: 3}
+  - {fileID: 8300000, guid: 26e64639c259b404b8674b0d0936a4fa, type: 3}
+  - {fileID: 8300000, guid: 84c218d673f931344becad602a6cf869, type: 3}
+  - {fileID: 8300000, guid: 6006c0af082f8f942a22c4629504ae4d, type: 3}
+  - {fileID: 8300000, guid: e99c54b81c806034ab1fcf4f5c1c35b0, type: 3}
+  - {fileID: 8300000, guid: 0c6a5aa34318d0a49b48897fb23a02fd, type: 3}
+--- !u!4 &1923099092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923099090}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1955930331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,6 +2777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 100
+  playerStats: {fileID: 11400000, guid: 9e84f3cc7c03aa847a780e3a446f38b4, type: 2}
   invincibleTime: 0.8
 --- !u!114 &1955930337
 MonoBehaviour:
@@ -2962,3 +3027,4 @@ SceneRoots:
   - {fileID: 874188846}
   - {fileID: 1437197451}
   - {fileID: 424744606}
+  - {fileID: 1923099092}

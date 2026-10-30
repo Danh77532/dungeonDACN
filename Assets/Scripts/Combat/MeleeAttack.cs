@@ -12,12 +12,14 @@ public class MeleeAttack : MonoBehaviour
 
     float _nextAttackTime;
     public event System.Action OnAttack;
+    void Awake() { var stats = GetComponent<Health>()?.BaseStats; if (stats != null) { damage = stats.damage; cooldown = stats.attackCooldown; } }
 
     void OnEnable()  => input.AttackPressed += Attack;
     void OnDisable() => input.AttackPressed -= Attack;
 
     void Attack()
     {
+        if (GameManager.Instance != null && GameManager.Instance.State != GameState.Playing) return;
         if (Time.time < _nextAttackTime) return;
         _nextAttackTime = Time.time + cooldown;
         OnAttack?.Invoke();

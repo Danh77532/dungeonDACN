@@ -52,6 +52,7 @@ public class PlayerReaction : MonoBehaviour
 
     void OnDied()
     {
+        GameManager.Instance?.GameOver();
         Debug.Log("Player đã chết");
         StopAllCoroutines();
         sprite.enabled = true;

@@ -30,7 +30,8 @@ public class PlayerMovement : MonoBehaviour
 {
     _rb = GetComponent<Rigidbody2D>();
     _baseScale = transform.localScale; // nhớ Scale bạn đã đặt trong Editor
-}
+        var stats = GetComponent<Health>()?.BaseStats; if (stats != null) { moveSpeed = stats.moveSpeed; acceleration = stats.acceleration; jumpSpeed = stats.jumpSpeed; }
+    }
 
     void OnEnable()
     {
@@ -54,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
         bool grounded = v.y <= 0.01f &&
             Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer);
+        if (grounded && !IsGrounded && GameManager.Instance != null && GameManager.Instance.State == GameState.Playing) AudioManager.Instance?.PlaySfx("03_land");
         IsGrounded = grounded;
 
         _coyote = grounded ? coyoteTime : _coyote - dt;
@@ -66,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         if (_jumpBuffer > 0f && _coyote > 0f)
         {
             v.y = jumpSpeed;
+            AudioManager.Instance?.PlaySfx("02_jump");
             _jumpBuffer = 0f;
             _coyote = 0f;
         }
